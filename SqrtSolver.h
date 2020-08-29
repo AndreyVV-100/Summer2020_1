@@ -24,11 +24,11 @@ int Solve(double a, double b, double c, double *x1, double *x2)
 		!isfinite(b) ||
 		!isfinite(c))
 		return -2; /*Check input*/
-	if (abs(a) < EPS)
+	if (fabs(a) < EPS)
 	{
-		if (abs(b) < EPS)
+		if (fabs(b) < EPS)
 		{
-			if (abs(c) < EPS) return -1;
+			if (fabs(c) < EPS) return -1;
 			else return 0; /*a == 0, b == 0, c != 0*/
 		}
 		else /*a == 0, b != 0, c != 0*/
