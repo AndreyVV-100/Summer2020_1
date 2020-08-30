@@ -1,3 +1,4 @@
+#include <assert.h>
 const double EPS = 1e-5;
 
 //--------------------------------------------
@@ -12,18 +13,18 @@ const double EPS = 1e-5;
 //! @note
 //! Usualy return number of solves eqation.
 //! Return -1, if eqation is multiplicity R.
-//! Return -2, if input is bad.
 //! Need module <math.h> (functions abs ans sqrt).
 //--------------------------------------------
 
 int Solve(double a, double b, double c, double *x1, double *x2)
 {
-	if (x1 == NULL ||
-		x2 == NULL ||
-		!isfinite(a) ||
-		!isfinite(b) ||
-		!isfinite(c))
-		return -2; /*Check input*/
+	/*Check data*/
+	assert(x1 != NULL);
+	assert(x2 != NULL);
+	assert(x1 != x2);
+	assert(isfinite(a));
+	assert(isfinite(b));
+	assert(isfinite(c));
 	if (fabs(a) < EPS)
 	{
 		if (fabs(b) < EPS)
