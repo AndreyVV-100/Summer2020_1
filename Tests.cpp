@@ -22,10 +22,10 @@ void Tests()
 		if (check == ans0[i] &&
 			(check == 0  ||
 			 check == -1 ||
-				check == 1 && abs(x1 - ans1[i]) < EPS_ ||
+				check == 1 && fabs(x1 - ans1[i]) < EPS_ ||
 				check == 2 &&
-				(abs(x1 - ans1[i]) < EPS_ && abs(x2 - ans2[i]) < EPS_ ||
-				 abs(x1 - ans2[i]) < EPS_ && abs(x2 - ans1[i]) < EPS_)))
+				(fabs(x1 - ans1[i]) < EPS_ && fabs(x2 - ans2[i]) < EPS_ ||
+				 fabs(x1 - ans2[i]) < EPS_ && fabs(x2 - ans1[i]) < EPS_)))
 			printf("Test #%d OK\n", i);
 		else
 			printf("Test #%d failed, input: a = %f, b = %f, c = %f\n", i, a[i], b[i], c[i]);
